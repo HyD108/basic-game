@@ -98,7 +98,7 @@ AnimationClip:
     - time: 0.45
       value: {fileID: 21300000, guid: bb4783ca2bbc1884a8e960b00eb2e637, type: 3}
     - time: 0.475
-      value: {fileID: 21300000, guid: acefc4e07fd3d0b44bc468c40794c7ab, type: 3}
+      value: {fileID: 21300000, guid: d19681e768e757844a6cdae2b36f3243, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -149,7 +149,7 @@ AnimationClip:
     - {fileID: 21300000, guid: 32130457af3e65847b14a81e7d600867, type: 3}
     - {fileID: 21300000, guid: 2357e6f174e0014448d178cae1ccc078, type: 3}
     - {fileID: 21300000, guid: bb4783ca2bbc1884a8e960b00eb2e637, type: 3}
-    - {fileID: 21300000, guid: acefc4e07fd3d0b44bc468c40794c7ab, type: 3}
+    - {fileID: 21300000, guid: d19681e768e757844a6cdae2b36f3243, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -213,4 +213,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.475
+    functionName: ResetAtkAnim
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
