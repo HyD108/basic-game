@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace HyD
 {
-    public class Enemy : MonoBehaviour
+    public class Enemy : MonoBehaviour, IComponentChecking
     {
         private Animator m_anim;
         private Rigidbody2D m_rb;
@@ -26,7 +26,7 @@ namespace HyD
         // Update is called once per frame
         void Update()
         {
-            if (m_rb == null || m_player == null) return;
+            if (IsComponentNull()) return;
                        
             m_rb.velocity = new Vector2 (-speed, m_rb.velocity.y);
 
@@ -41,6 +41,11 @@ namespace HyD
             {
                 m_rb.velocity = new Vector2(-speed, m_rb.velocity.y);
             }
+        }
+
+        public bool IsComponentNull()
+        {
+            return m_anim == null || m_player == null || m_rb == null;
         }
     }
 }

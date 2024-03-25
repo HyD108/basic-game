@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  AtkDis: 2
+  AtkDis: 0.8
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,6 +493,10 @@ PrefabInstance:
     - target: {fileID: 2397280206221247978, guid: 0c58e5a32443da241a0690b17ed52323, type: 3}
       propertyPath: m_Name
       value: hero1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397280206221247978, guid: 0c58e5a32443da241a0690b17ed52323, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

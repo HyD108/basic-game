@@ -5,12 +5,13 @@ using UnityEngine;
 
 namespace HyD
 {
-    public class Player : MonoBehaviour
+    public class Player : MonoBehaviour, IComponentChecking 
     {
         private Animator m_anim;
         public float AtkRate;
         private float m_curAtkRate;
         private bool m_isAttacked;
+        private bool IsDead;
 
         private void Awake()
         {
@@ -22,17 +23,21 @@ namespace HyD
         {
 
         }
+        public bool IsComponentNull()
+        {
+            return m_anim == null;
+        }
 
         // Update is called once per frame
         void Update()
         {
             if (Input.GetMouseButtonDown(0) && !m_isAttacked)
             {
-                if (m_anim != null)
-                {
+                if (IsComponentNull()) return;
+                
                     m_anim.SetBool(Const.ATTACK_ANIM, true);
                     m_isAttacked = true;
-                }
+                
             }
             if (m_isAttacked)
             {
@@ -46,10 +51,19 @@ namespace HyD
         }
         public void ResetAtkAnim()
         {
-            if (m_anim)
-            {
+           if (IsComponentNull()) return;  
                 m_anim.SetBool(Const.ATTACK_ANIM, false);
+            
+        }
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (IsComponentNull()) return;
+            if (collision.CompareTag(Const.ENEMY_WEAPON_TAG) && !IsDead)
+            {
+                m_anim.SetTrigger(Const.DEAD_ANIM);
+                IsDead = true;
             }
         }
+
     }
 }
