@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 1806017625250460021}
   - component: {fileID: 2031094292312449571}
   - component: {fileID: 7707922609743151506}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: enemy1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -194,8 +194,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bc4a96365c37394a9a4f0569e18dcd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  AtkDis: 0.8
+  speed: 1.5
+  AtkDis: 1
 --- !u!1 &5236366448741532585
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,7 +207,7 @@ GameObject:
   - component: {fileID: 5323615199682515383}
   - component: {fileID: 1420754963530292936}
   - component: {fileID: 6990882488246075627}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Weapon
   m_TagString: EnemyWeapon
   m_Icon: {fileID: 0}

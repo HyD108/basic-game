@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 1714037121075288684}
   - component: {fileID: 3554455681220990254}
   - component: {fileID: 5027083344622878340}
-  m_Layer: 0
+  - component: {fileID: 752483214662633599}
+  m_Layer: 6
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,6 +96,18 @@ CircleCollider2D:
   m_Offset: {x: 0.17857367, y: 0}
   serializedVersion: 2
   m_Radius: 0.27
+--- !u!114 &752483214662633599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5137025430609079645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfa838440235a6c4594025f4892e87ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7999840770807455511
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,9 +121,10 @@ GameObject:
   - component: {fileID: 3057543579929674707}
   - component: {fileID: -1750311713228392172}
   - component: {fileID: -6021424780489117592}
-  m_Layer: 0
+  - component: {fileID: 565076821447169897}
+  m_Layer: 6
   m_Name: hero 03
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,7 +139,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1.2, y: 1.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1714037121075288684}
@@ -276,3 +290,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8211143, y: 2.3959932}
   m_EdgeRadius: 0
+--- !u!114 &565076821447169897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7999840770807455511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0ba3406c1ac6b34ea49271276003b7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AtkRate: 1.5

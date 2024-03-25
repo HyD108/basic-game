@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 5947610250756060792}
   - component: {fileID: 8657549649357705805}
   - component: {fileID: 7757610608364084589}
-  m_Layer: 0
+  - component: {fileID: 5102343324719101125}
+  m_Layer: 6
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,6 +96,18 @@ CircleCollider2D:
   m_Offset: {x: 0.17857367, y: 0}
   serializedVersion: 2
   m_Radius: 0.27
+--- !u!114 &5102343324719101125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1206407046589657283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfa838440235a6c4594025f4892e87ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2397280206221247978
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,7 +122,7 @@ GameObject:
   - component: {fileID: 5147756352687992414}
   - component: {fileID: 8892489155383075931}
   - component: {fileID: 5306818772108909905}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: hero1
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -126,7 +139,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5947610250756060792}
