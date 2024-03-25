@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-
+namespace HyD   
+{
     public class Const
     {
         public const string PLAYER_TAG = "Player";
@@ -25,4 +26,6 @@ using UnityEngine;
 
 
     }
+}
+
 
