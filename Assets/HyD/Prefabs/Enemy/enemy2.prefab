@@ -290,4 +290,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.5
-  AtkDis: 1.45
+  AtkDis: 1.5

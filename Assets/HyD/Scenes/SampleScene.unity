@@ -131,9 +131,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1206407046589657283, guid: 0c58e5a32443da241a0690b17ed52323, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2025259786200148165, guid: 0c58e5a32443da241a0690b17ed52323, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.81
+      value: 3.4
       objectReference: {fileID: 0}
     - target: {fileID: 2025259786200148165, guid: 0c58e5a32443da241a0690b17ed52323, type: 3}
       propertyPath: m_LocalPosition.y
@@ -174,6 +178,10 @@ PrefabInstance:
     - target: {fileID: 2397280206221247978, guid: 0c58e5a32443da241a0690b17ed52323, type: 3}
       propertyPath: m_Name
       value: hero1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397280206221247978, guid: 0c58e5a32443da241a0690b17ed52323, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -412,9 +420,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1352593389}
   - component: {fileID: 1352593388}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: GameManager
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -431,7 +439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae9dc90b40dd72449ae483d42236ab89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnTime: 1.5
+  spawnTime: 3
   enemyPrefabs:
   - {fileID: 7707922609743151506, guid: a808d5dbe8934884db0b687d6c5fcfaa, type: 3}
   - {fileID: 1291397674717444437, guid: b39959976f7bc79409b5ff71db55129c, type: 3}

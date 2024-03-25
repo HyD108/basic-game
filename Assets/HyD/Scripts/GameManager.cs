@@ -9,6 +9,10 @@ namespace HyD
         public float spawnTime;
         public Enemy[] enemyPrefabs;
         private bool m_GameIsOver;
+        private int m_Score;
+
+        public int Score { get => m_Score; set => m_Score = value; }
+
         // Start is called before the first frame update
         void Start()
         {

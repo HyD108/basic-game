@@ -62,6 +62,7 @@ namespace HyD
             {
                 m_anim.SetTrigger(Const.DEAD_ANIM);
                 IsDead = true;
+                gameObject.layer = LayerMask.NameToLayer(Const.DEAD_LAYER);
             }
         }
 

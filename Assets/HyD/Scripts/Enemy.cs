@@ -11,11 +11,15 @@ namespace HyD
         public float speed;
         public float AtkDis;
         private Player m_player;
+        private bool m_dead;
+
+        private GameManager m_gm;
         private void Awake()
         {
             m_anim = GetComponent<Animator>();
             m_rb = GetComponent<Rigidbody2D>();
             m_player = FindObjectOfType<Player>();
+            m_gm = FindObjectOfType<GameManager>();
         }
         // Start is called before the first frame update
         void Start()
@@ -49,10 +53,17 @@ namespace HyD
         }
         public void Die()
         {
-            if(IsComponentNull()) return;
+            if(IsComponentNull() || m_dead) return;
+            m_dead = true;
             m_anim.SetTrigger(Const.DEAD_ANIM);
             m_rb.velocity = Vector2.zero;
             gameObject.layer = LayerMask.NameToLayer(Const.DEAD_ANIM);
+
+            if (m_gm)
+            {
+                m_gm.Score++;
+            }
+            Destroy(gameObject, 2f);
         }
         
     }
