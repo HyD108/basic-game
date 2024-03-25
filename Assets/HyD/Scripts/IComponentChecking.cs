@@ -2,7 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IComponentChecking
+namespace HyD
 {
-    bool IsComponentNull();
+    public interface IComponentChecking
+    {
+        bool IsComponentNull();
+    }
+
 }
