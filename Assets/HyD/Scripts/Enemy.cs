@@ -13,6 +13,9 @@ namespace HyD
         private Player m_player;
         private bool m_dead;
 
+        public int minCoinBonus;
+        public int maxCoinBonus;
+
         private GameManager m_gm;
         private void Awake()
         {
@@ -49,7 +52,7 @@ namespace HyD
 
         public bool IsComponentNull()
         {
-            return m_anim == null || m_player == null || m_rb == null;
+            return m_anim == null || m_player == null || m_rb == null || m_gm == null;
         }
         public void Die()
         {
@@ -58,11 +61,11 @@ namespace HyD
             m_anim.SetTrigger(Const.DEAD_ANIM);
             m_rb.velocity = Vector2.zero;
             gameObject.layer = LayerMask.NameToLayer(Const.DEAD_ANIM);
-
-            if (m_gm)
-            {
+            
                 m_gm.Score++;
-            }
+            int coinBonus = Random.Range(minCoinBonus, maxCoinBonus);
+            Debug.Log(coinBonus);
+            Pref.coins += coinBonus;    
             Destroy(gameObject, 2f);
         }
         
