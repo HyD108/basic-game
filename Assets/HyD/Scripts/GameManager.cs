@@ -4,19 +4,30 @@ using UnityEngine;
 
 namespace HyD
 {
-    public class GameManager : MonoBehaviour
+    public class GameManager : MonoBehaviour, IComponentChecking
     {
         public float spawnTime;
         public Enemy[] enemyPrefabs;
         private bool m_GameIsOver;
         private int m_Score;
+        public GUImanager guiMng;
+
 
         public int Score { get => m_Score; set => m_Score = value; }
 
         // Start is called before the first frame update
         void Start()
         {
+            
+            if(IsComponentNull()) return;
+            guiMng.ShowGameGui(false);
+
+        }
+        public void PlayGame()
+        {
             StartCoroutine(SpawnEnemy());
+            guiMng.ShowGameGui(true);
+            guiMng.UpdateGamePlayCoins();
         }
 
         // Update is called once per frame
@@ -39,6 +50,11 @@ namespace HyD
                 }
                 yield return new WaitForSeconds(spawnTime);
             }
+        }
+
+        public bool IsComponentNull()
+        {
+            return guiMng == null;
         }
     }
 }

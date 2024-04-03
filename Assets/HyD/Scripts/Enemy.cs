@@ -63,9 +63,14 @@ namespace HyD
             gameObject.layer = LayerMask.NameToLayer(Const.DEAD_ANIM);
             
                 m_gm.Score++;
-            int coinBonus = Random.Range(minCoinBonus, maxCoinBonus);
-            Debug.Log(coinBonus);
+            int coinBonus = Random.Range(minCoinBonus, maxCoinBonus);           
             Pref.coins += coinBonus;    
+            if (m_gm.guiMng)
+            {
+                m_gm.guiMng.UpdateGamePlayCoins();
+            }
+
+
             Destroy(gameObject, 2f);
         }
         
