@@ -30,10 +30,13 @@ namespace HyD
             guiMng.UpdateGamePlayCoins();
         }
 
-        // Update is called once per frame
-        void Update()
+        public void GameOver()
         {
-
+            if(m_GameIsOver) return;
+            m_GameIsOver = true;
+            Pref.Bestscore = m_Score;
+            if(guiMng.gameoverDialog)
+            guiMng.gameoverDialog.Show(true);
         }
         IEnumerator SpawnEnemy()
         {
