@@ -12,7 +12,7 @@ namespace HyD
         public Button btn;
         public void UpdateUI(ShopItem item, int itemIdx)
         {
-            if(item != null) return;
+            if(item == null) return;
             
             if(hub)
                 hub.sprite = item.previewImg;
