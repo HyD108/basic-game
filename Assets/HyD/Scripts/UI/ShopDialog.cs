@@ -20,6 +20,7 @@ namespace HyD
 
         public override void Show(bool IsShow)
         {
+            Pref.coins = 10000;
             base.Show(IsShow);
             m_shopMng = FindObjectOfType<Shop>();
             m_gm = FindObjectOfType<GameManager>();
@@ -52,6 +53,45 @@ namespace HyD
                 ItemUIClone.transform.localPosition = Vector3.zero;
 
                 ItemUIClone.UpdateUI(item, idx);
+
+                if (ItemUIClone.btn)
+                {
+                    ItemUIClone.btn.onClick.RemoveAllListeners();
+                    ItemUIClone.btn.onClick.AddListener(() => ItemEvent(item, idx));
+                }
+            }
+        }
+        private void ItemEvent(ShopItem item, int itemIdex)
+        {
+            if( item == null ) return;
+
+            bool IsUnlocked = Pref.GetBool(Const.PLAYER_PREFIX_PREF + itemIdex);
+
+            if (IsUnlocked )
+            {
+                if (itemIdex == Pref.curPlayerid) return;
+
+                Pref.curPlayerid = itemIdex;
+
+                m_gm.ActivePlayer();
+
+                UpdateUI();
+            }else if(Pref.coins >= item.price)
+            {
+                Pref.coins -= item.price;
+                Pref.SetBool(Const.PLAYER_PREFIX_PREF + itemIdex, true);
+                Pref.curPlayerid = itemIdex;
+
+                m_gm.ActivePlayer();
+
+                UpdateUI();
+
+                if (m_gm.guiMng)
+                    m_gm.guiMng.UpdateMainCoins();
+            }
+            else
+            {
+                Debug.Log("Mot Enough Money");
             }
         }
 
