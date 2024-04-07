@@ -57,6 +57,13 @@ namespace HyD
                 m_anim.SetBool(Const.ATTACK_ANIM, false);
             
         }
+
+        public void PlayAtkSound()
+        {
+            if (m_gm.AuCtr)
+                m_gm.AuCtr.PlaySound(m_gm.AuCtr.playerAtk);
+        }
+
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (IsComponentNull()) return;
@@ -65,6 +72,8 @@ namespace HyD
                 m_anim.SetTrigger(Const.DEAD_ANIM);
                 IsDead = true;
                 gameObject.layer = LayerMask.NameToLayer(Const.DEAD_LAYER);
+
+
                 m_gm.GameOver();
             }
         }

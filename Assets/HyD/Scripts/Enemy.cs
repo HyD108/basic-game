@@ -70,6 +70,8 @@ namespace HyD
                 m_gm.guiMng.UpdateGamePlayCoins();
             }
 
+            if (m_gm.AuCtr)
+                m_gm.AuCtr.PlaySound(m_gm.AuCtr.enemyDead);
 
             Destroy(gameObject, 2f);
         }

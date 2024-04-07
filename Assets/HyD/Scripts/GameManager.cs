@@ -13,6 +13,7 @@ namespace HyD
         public GUImanager guiMng;
         private Player m_curPlayer;
         public Shop shopMng;
+        public AudioController AuCtr;
 
 
         public int Score { get => m_Score; set => m_Score = value; }
@@ -27,15 +28,18 @@ namespace HyD
         }
         public bool IsComponentNull()
         {
-            return guiMng == null || shopMng == null;
+            return guiMng == null || shopMng == null || AuCtr == null;
         }
         public void PlayGame()
         {
+                if (IsComponentNull()) return;
+
             ActivePlayer();
 
             StartCoroutine(SpawnEnemy());
             guiMng.ShowGameGui(true);
             guiMng.UpdateGamePlayCoins();
+            AuCtr.PlayBhm();
             
         }
 
@@ -63,6 +67,7 @@ namespace HyD
             Pref.Bestscore = m_Score;
             if(guiMng.gameoverDialog)
             guiMng.gameoverDialog.Show(true);
+            AuCtr.PlaySound(AuCtr.GameOver);
         }
         IEnumerator SpawnEnemy()
         {

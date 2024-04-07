@@ -119,9 +119,9 @@ GameObject:
   - component: {fileID: 3191756859607600042}
   - component: {fileID: 4915279148428896545}
   - component: {fileID: 3057543579929674707}
-  - component: {fileID: -1750311713228392172}
-  - component: {fileID: -6021424780489117592}
   - component: {fileID: 565076821447169897}
+  - component: {fileID: 6200005355815266209}
+  - component: {fileID: 2125304246500365812}
   m_Layer: 6
   m_Name: hero 03
   m_TagString: Player
@@ -218,7 +218,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!50 &-1750311713228392172
+--- !u!114 &565076821447169897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7999840770807455511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0ba3406c1ac6b34ea49271276003b7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AtkRate: 1.5
+--- !u!50 &6200005355815266209
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -244,8 +257,8 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!61 &-6021424780489117592
+  m_Constraints: 0
+--- !u!61 &2125304246500365812
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -277,7 +290,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.16535139, y: -0.69724774}
+  m_Offset: {x: 0.20864385, y: -0.7615507}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -288,18 +301,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8211143, y: 2.3959932}
+  m_Size: {x: 1.6199671, y: 2.5171359}
   m_EdgeRadius: 0
---- !u!114 &565076821447169897
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7999840770807455511}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ba3406c1ac6b34ea49271276003b7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AtkRate: 1.5
